@@ -8,8 +8,9 @@
 			// 	$user = $userModel->get($user);
 			// }
 			// var_dump($user);
-
-			$this->view('templates/header');
+			$links = ['<link rel="stylesheet" href="'.ASSET_ROOT . '/css/global.css'.'"/>'];
+			
+			$this->view('templates/header', ['links' => $links]);
 
 			// $this->view('home/index', ['user'=>$user]);
 			$this->view('home/index');
