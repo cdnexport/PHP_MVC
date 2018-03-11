@@ -7,7 +7,6 @@
 
 		public function __construct(){
 			$url = $this->parseUrl();
-
 			//Check if the controller exists
 			if(file_exists('../app/controllers/'.$url[0].'.php')){
 				$this->controller = $url[0];
