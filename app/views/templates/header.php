@@ -6,7 +6,9 @@
 <head>
 	<meta charset="utf-8">
 	<title>Home</title>
-	<link rel="stylesheet" href="<?= ASSET_ROOT;?>/css/global.css"/>
+	<?php foreach($data['links'] as $link): ?>
+		<?= $link ?>
+	<?php endforeach;?>
 </head>
 <body>
 	<ul>
