@@ -1,7 +1,7 @@
 TODO:
 	DONE: Make the register php talk better with the register DOM
 		Some web MVC frameworks take a thin client approach that places almost the entire model, view and controller logic on the server. This is reflected in frameworks such as Django, Rails and ASP.NET MVC. In this approach, the client sends either hyperlink requests or form submissions to the controller and then receives a complete and updated web page (or other document) from the view; the model exists entirely on the server.
-	Page not found not interfacing properly with the template
+	DONE: Page not found not interfacing properly with the template
 FEATURES:
 	DONE: Modify the templates to allow me to pass through other tags necessary, like css/js links
 	Would subviews make any sense for this project? Optionally, maybe.

@@ -9,8 +9,9 @@
 			// }
 			// var_dump($user);
 			$links = ['<link rel="stylesheet" href="'.ASSET_ROOT . '/css/global.css'.'"/>'];
+			$title = "Home";
 			
-			$this->view('templates/header', ['links' => $links]);
+			$this->view('templates/header', ['links' => $links, 'title'=>$title]);
 
 			// $this->view('home/index', ['user'=>$user]);
 			$this->view('home/index');

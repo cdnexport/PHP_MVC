@@ -5,7 +5,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Home</title>
+	<title><?= $data['title']?></title>
 	<?php foreach($data['links'] as $link): ?>
 		<?= $link ?>
 	<?php endforeach;?>
