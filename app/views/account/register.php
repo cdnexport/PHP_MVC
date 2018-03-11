@@ -29,7 +29,7 @@
 			document.getElementById("username").value = "<?= $_SESSION['register']['name']?>";
 			document.getElementById("email").value = "<?= $_SESSION['register']['email'] ?>";
 		</script>
-	<?php endif; 
+	<?php endif; session_destroy();
 ?>
 <script>
 	var passField =document.getElementById("password");
