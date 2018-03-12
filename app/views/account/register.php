@@ -1,7 +1,7 @@
 <?php if(isset($_POST['btnRegister'])){		
 		$_SESSION['register'] = $data['user']->createUser($_POST['username'],$_POST['email'],$_POST['password'],$_POST['password2']);
 	}?>
-<form action = "" method="POST">
+<form method="POST">
 	<label for="username">Username:</label>
 	<input type="text" name="username" id="username" required>
 	<br>

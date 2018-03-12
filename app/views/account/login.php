@@ -1,7 +1,7 @@
 <?php if(isset($_POST['btnLogin'])){		
 		$_SESSION['login'] = $data['user']->login($_POST['username'],$_POST['password']);
 	}?>
-<form action="" method="POST">
+<form method="POST">
 	<label for="username">Username:</label>
 	<input type="text" name="username" id="username" required>
 	<br>
