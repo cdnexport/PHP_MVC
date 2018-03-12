@@ -1,7 +1,7 @@
 <?php if(isset($_POST['btnRegister'])){		
 		$_SESSION['register'] = $data['user']->createUser($_POST['username'],$_POST['email'],$_POST['password'],$_POST['password2']);
 	}?>
-<form action="" method="POST">
+<form action = "" method="POST">
 	<label for="username">Username:</label>
 	<input type="text" name="username" id="username" required>
 	<br>
@@ -15,7 +15,7 @@
 	<label for="password2">Re-enter Password:</label>
 	<input type="password" name="password2" id="password" required>
 	<br>
-	
+	<?php var_dump($_SESSION['username']);?>
 	<?php if(isset($_SESSION['register']) && !$_SESSION['register']['success']):?>
 		<p class="error" id="php-error" style="visibility: visible;"><?= $_SESSION['register']['error']?></p>
 	<?php endif; ?>
@@ -29,7 +29,7 @@
 			document.getElementById("username").value = "<?= $_SESSION['register']['name']?>";
 			document.getElementById("email").value = "<?= $_SESSION['register']['email'] ?>";
 		</script>
-	<?php endif; session_destroy();
+	<?php endif;
 ?>
 <script>
 	var passField =document.getElementById("password");
