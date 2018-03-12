@@ -15,7 +15,6 @@
 	<label for="password2">Re-enter Password:</label>
 	<input type="password" name="password2" id="password" required>
 	<br>
-	<?php var_dump($_SESSION['username']);?>
 	<?php if(isset($_SESSION['register']) && !$_SESSION['register']['success']):?>
 		<p class="error" id="php-error" style="visibility: visible;"><?= $_SESSION['register']['error']?></p>
 	<?php endif; ?>
