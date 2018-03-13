@@ -43,7 +43,6 @@
 			}
 
 			$user = $this->db->query("SELECT username, email FROM users WHERE username = '{$name}' OR email = '{$email}'")->fetch(PDO::FETCH_OBJ);
-			var_dump($user);
 			if(!$user) {
 				$query = "INSERT INTO Users (Username, PasswordHash, Email, DateJoined, IsMod ) values (:Username, :PasswordHash, :Email, :DateJoined, :IsMod)";
 				$statement = $this->db->prepare($query);

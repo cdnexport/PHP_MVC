@@ -15,21 +15,13 @@
 	<label for="password2">Re-enter Password:</label>
 	<input type="password" name="password2" id="password" required>
 	<br>
-	<?php if(isset($_SESSION['register']) && !$_SESSION['register']['success']):?>
+	<?php if(isset($_SESSION['register']['success'])):?>
 		<p class="error" id="php-error" style="visibility: visible;"><?= $_SESSION['register']['error']?></p>
+		<?php $_SESSION['register'] = []; ?>
 	<?php endif; ?>
 	
 	<button type="submit" name="btnRegister" id="btnRegister">Register</button>
 </form>
-<?php 
-	if(isset($_SESSION['register']['name'])):?>
-		<script>
-			console.log("JJJJJJJJJJJ");
-			document.getElementById("username").value = "<?= $_SESSION['register']['name']?>";
-			document.getElementById("email").value = "<?= $_SESSION['register']['email'] ?>";
-		</script>
-	<?php endif;
-?>
 <script>
 	var passField =document.getElementById("password");
 
