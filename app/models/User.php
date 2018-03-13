@@ -52,7 +52,8 @@
 				$statement->bindValue(':DateJoined',date("Y-m-d H:i:s"));
 				$statement->bindValue(':IsMod',false);
 				$statement->execute();
-				$this->login($name,$password);
+				$_SESSION['username'] = $name;
+				header("Location: ".ASSET_ROOT);
 			}
 			else{
 				return ["success"=>false, "error"=>"Username or email is already registered."];
