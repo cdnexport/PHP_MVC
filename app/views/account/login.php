@@ -17,6 +17,6 @@
 </form>
 <?php if(!$_SESSION['login']['success']):?>
 	<script>
-		document.getElementById("username").value = "<?= $_SESSION['login']['name']?>";
+		$("#username").attr("value", "<?= $_SESSION['login']['name']?>");
 	</script>
 <?php endif; ?>
