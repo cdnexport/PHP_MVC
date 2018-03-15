@@ -13,8 +13,9 @@
     <br>
     <p class="error" id="password-error" style="display: none;">Password must be 8 or more characters long.</p>
     <label for="password2">Re-enter Password:</label>
-    <input type="password" name="password2" id="password" required>
+    <input type="password" name="password2" id="password2" required>
     <br>
+    <p class="error" id="password2-error" style="display: none;">Password must be 8 or more characters long.</p>
     <?php if(isset($_SESSION['register']['success'])):?>
         <p class="error" id="php-error" style="visibility: visible;"><?= $_SESSION['register']['error']?></p>
         <?php $_SESSION['register'] = []; ?>
@@ -23,19 +24,16 @@
     <button type="submit" name="btnRegister" id="btnRegister">Register</button>
 </form>
 <script>
-    var passField =document.getElementById("password");
-
-    passField.addEventListener("focusout", (e)=>{
-        if(passField.value.length < 8){
-            console.log("F: "+passField.value.length);
-            passField.style.boxShadow="2px 2px 2px red";
-            document.getElementById("password-error").style.display = "block";
+    $("#password,#password2").focusout(function() {
+        if($(this).val().length < 8){
+            console.log(this.name + "-error");
+            $(this).css("box-shadow", "2px 2px 2px red");
+            $("#" + this.name + "-error").css("display","block");
         }
         else{
-            console.log("A: "+passField.value.length);
-            passField.style.boxShadow="0px 0px 0px red";
-            document.getElementById("password-error").style.display = "none";
-        }
+            $(this).css("box-shadow", "0px 0px 0px red");
+            $("#" + this.name + "-error").css("display","none");
+        }        
     });
 </script>
 
