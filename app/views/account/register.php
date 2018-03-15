@@ -26,7 +26,6 @@
 <script>
     $("#password,#password2").focusout(function() {
         if($(this).val().length < 8){
-            console.log(this.name + "-error");
             $(this).css("box-shadow", "2px 2px 2px red");
             $("#" + this.name + "-error").css("display","block");
         }
