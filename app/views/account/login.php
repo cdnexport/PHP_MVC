@@ -9,14 +9,13 @@
 	<input id="password" type="password" name="password" required>
 	<br>
 	
-	<?php if(isset($_SESSION['Login']) && !$_SESSION['Login']['success']):?>
-		<p class="error" id="php-error" style="visibility: visible;"><?= $_SESSION['Login']['error']?></p>
+	<?php if(isset($_SESSION['login']) && !$_SESSION['login']['success']):?>
+		<p class="error" id="php-error" style="visibility: visible;"><?= $_SESSION['login']['error']?></p>
+		<script>
+			$("#username").attr("value", "<?= $_SESSION['login']['name']?>");
+		</script>
+		<?php unset($_SESSION['login']) ?>
 	<?php endif; ?>
 	
 	<button type="submit" name="btnLogin" id="btnLogin">Login</button>
 </form>
-<?php if(!$_SESSION['login']['success']):?>
-	<script>
-		$("#username").attr("value", "<?= $_SESSION['login']['name']?>");
-	</script>
-<?php endif; ?>
