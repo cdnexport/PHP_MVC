@@ -15,9 +15,8 @@
 	
 	<button type="submit" name="btnLogin" id="btnLogin">Login</button>
 </form>
-<?php if(isset($_SESSION['login']['name'])):?>
+<?php if(!$_SESSION['login']['success']):?>
 	<script>
-		document.getElementById("username").value = "<?= $_SESSION['Login']['name']?>";
-		document.getElementById("email").value = "<?= $_SESSION['Login']['email'] ?>";
+		document.getElementById("username").value = "<?= $_SESSION['login']['name']?>";
 	</script>
 <?php endif; ?>

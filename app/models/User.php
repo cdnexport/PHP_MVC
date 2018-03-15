@@ -18,7 +18,7 @@
 		public function login($name, $password){
 			$user = $this->db->query("SELECT username, passwordhash FROM users WHERE username = '{$name}'")->fetch(PDO::FETCH_OBJ);
 			if(!isset($user->username) || !password_verify($password,$user->passwordhash)){
-				return ["success"=>false, "error"=>"Username or password are incorrect."];
+				return ["success"=>false, "error"=>"Username or password are incorrect.","name"=>$name];
 			}
 			else{
 				$_SESSION['username'] = $user->username;
